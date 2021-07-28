@@ -1,0 +1,5 @@
+name: Scifi
+version: ${project.version}
+main: scifi.scifi.McScifi
+api-version: 1.17
+authors: [ cxom, bbellini ]
