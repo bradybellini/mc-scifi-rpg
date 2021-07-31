@@ -1,7 +1,6 @@
 package scifi.scifi.listeners;
 
 import net.kyori.adventure.text.Component;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,11 +21,11 @@ public class OnJoinListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         ScifiPlayer scifiPlayer = playerManager.handlePlayerJoin(player);
-        sendJoinMessage(scifiPlayer);
+        event.joinMessage(constructJoinMessage(scifiPlayer));
     }
 
-    private void sendJoinMessage(ScifiPlayer scifiPlayer) {
-        Bukkit.getServer().sendMessage(Component.text(ChatColor.GREEN + scifiPlayer.getName() + " joined the server!"));
+    private Component constructJoinMessage(ScifiPlayer scifiPlayer) {
+        return Component.text(ChatColor.GREEN + scifiPlayer.getName() + " joined the server!");
     }
 
 }
