@@ -2,13 +2,13 @@ package scifi.scifi.player;
 
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import java.util.WeakHashMap;
 
 public class PlayerManager {
 
-    private final Map<UUID, ScifiPlayer> scifiPlayerMap = new WeakHashMap<>();
+    private final Map<UUID, ScifiPlayer> scifiPlayerMap = new HashMap<>();
 
     public ScifiPlayer handlePlayerJoin(Player player) {
         UUID playerUniqueId = player.getUniqueId();
@@ -20,4 +20,7 @@ public class PlayerManager {
         return scifiPlayer;
     }
 
+    public ScifiPlayer handlePlayerQuit(Player player) {
+        return scifiPlayerMap.remove(player.getUniqueId());
+    }
 }
