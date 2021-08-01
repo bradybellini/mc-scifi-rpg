@@ -7,6 +7,7 @@ import scifi.scifi.player.PlayerManager;
 
 public final class McScifi extends JavaPlugin {
 
+
     private PlayerManager playerManager;
 
     @Override
@@ -30,6 +31,5 @@ public final class McScifi extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
-
 
 }
