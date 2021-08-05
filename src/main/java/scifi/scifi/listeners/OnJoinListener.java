@@ -28,7 +28,7 @@ public class OnJoinListener implements Listener {
         Player player = event.getPlayer();
         ScifiPlayer scifiPlayer = playerManager.handlePlayerJoin(player);
         event.joinMessage(constructJoinMessage(scifiPlayer));
-        Bukkit.getLogger().info(conn.getRequest("https://ypallacrxhalhdrkcbug.supabase.co/rest/v1/player?select=*").body());
+//        Bukkit.getLogger().info();
     }
 
     private Component constructJoinMessage(ScifiPlayer scifiPlayer) {
